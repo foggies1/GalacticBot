@@ -7,10 +7,24 @@ import java.util.Optional;
 
 public interface GUserProvider {
 
+    /**
+     * Unloads the GUser object from cache.
+     * @param userID the ID of the DUser.
+     */
     void unloadGUser(String userID);
 
+    /**
+     * Checks if the local cache contains the GUser object
+     * related the input UserID.
+     * @param userID the ID of the DUser.
+     * @return whether it contains the GUser object.
+     */
     boolean cacheContains(String userID);
 
+    /**
+     * Loads the GUser from the database.
+     * @param userID the ID of the DUser to load.
+     */
     void loadGUser(String userID);
 
     /**
